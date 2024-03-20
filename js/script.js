@@ -29,10 +29,15 @@ function startGame(){
     starGameEl.innerHTML='';
     
     let numberList = generateRandomNumbers(NUMS);
-    console.log(numberList);
+    
+    //console.log(numberList);
 
     let newBoxes = generateBox(numberList);
-    console.log(newBoxes)
+    console.log(newBoxes);
+
+    starGameEl.appendChild(newBoxes);
+
+
 }
 
 //funzioni
