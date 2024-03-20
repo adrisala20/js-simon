@@ -12,10 +12,9 @@ Consigli del giorno:
 
 let numbersArray= [];
 console.log(numbersArray); 
+
 const NUMS = 5;
-
 let userNumbers = [];
-
 let sameNumbers=[];
 
 const button = document.querySelector('.btn');
@@ -24,7 +23,7 @@ const button = document.querySelector('.btn');
 button.addEventListener('click', startGame);
 
 //aggiungo il timeout
-setTimeout(dissapearNumbers, 5000);
+setTimeout(dissapearNumbers, 4000);
 
 //creo la funzione principale
 function startGame(){
@@ -45,7 +44,10 @@ function startGame(){
         starGameEl.appendChild(newBox);
 
     }
-}
+
+    
+};
+
 
 //funzioni
 function generateRandomNumbers(){
@@ -72,4 +74,10 @@ function generateBox(content){
 function dissapearNumbers(){
     const starGameEl = document.getElementById('gioco');
     starGameEl.classList.add('d-none');
+    while(userNumbers < NUMS){
+        let insertNumbersUser= parseInt(prompt('inserisci i numeri che ricordi'))
+        if(userNumbers == numbersArray){
+            message= 'bravo';
+            console.log(message);        
+    }}
 }
