@@ -10,6 +10,8 @@ Consigli del giorno:
 * Individuate gli elementi di cui avete bisogno per realizzare il programma.
 */
 
+let numbersArray= [];
+console.log(numbersArray); 
 const NUMS = 5;
 
 let userNumbers = [];
@@ -28,13 +30,13 @@ function startGame(){
     
     let numberList = generateRandomNumbers(NUMS);
     console.log(numberList);
+
+    let newBoxes = generateBox(numberList);
+    console.log(newBoxes)
 }
 
 //funzioni
 function generateRandomNumbers(){
-    
-    let numbersArray= [];
-    console.log(numbersArray); 
 
     while (numbersArray.length < NUMS){
         let num = getRndInteger(1, 100);
@@ -46,11 +48,11 @@ function generateRandomNumbers(){
     return numbersArray;
 };
 
-function generateBox(boxes){
+function generateBox(content){
     const newBox = document.createElement('div');
     newBox.classList.add('box');
-    newBoxes.innerHTML=`
-    <span> ciao </span>
+    newBox.innerHTML=`
+    <span> ${content} </span>
     `;
-
+    return newBox;
 }
