@@ -10,7 +10,8 @@ Consigli del giorno:
 * Individuate gli elementi di cui avete bisogno per realizzare il programma.
 */
 
-let numbersArray= [];
+const NUMS = 5;
+
 let userNumbers = [];
 
 let sameNumbers=[];
@@ -20,15 +21,29 @@ const button = document.querySelector('.btn');
 //creo la funzione base 
 button.addEventListener('click', function(){
 
-    let boxes = document.getElementById('numeri');
-    boxes.classList.add('box');
-    boxes.innerHTML='';
-    console.log(boxes);
-
 });
 
-
 //funzioni
-// function generateRandomNumbers(numbers){
-//     let num = 
-// }
+function generateRandomNumbers(){
+    
+    let numbersArray= [];
+    console.log(numbersArray); 
+
+    while (numbersArray.length < NUMS){
+        let num = getRndInteger(1, 100);
+        console.log(num);
+        if(!numbersArray.includes(num)){
+            numbersArray.push(num);
+        }
+    } 
+    return numbersArray;
+};
+
+function generateBox(boxes){
+    const newBox = document.createElement('div');
+    newBox.classList.add('box');
+    newBoxes.innerHTML=`
+    <span> ciao </span>
+    `;
+
+}
