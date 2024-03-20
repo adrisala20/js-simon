@@ -23,12 +23,14 @@ const button = document.querySelector('.btn');
 button.addEventListener('click', startGame);
 
 //aggiungo il timeout
-setTimeout(dissapearNumbers, 4000);
+setTimeout(dissapearNumbers, 5 * 1000);
+setTimeout(appearPrompt, 6 * 1000);
 
 //creo la funzione principale
 function startGame(){
     const starGameEl = document.getElementById('gioco');
     starGameEl.innerHTML='';
+
     
     let numberList = generateRandomNumbers(NUMS);
     //console.log(numberList);
@@ -42,12 +44,8 @@ function startGame(){
 
         //append il nuovo box alla funzione
         starGameEl.appendChild(newBox);
-
-    }
-
-    
+    }   
 };
-
 
 //funzioni
 function generateRandomNumbers(){
@@ -74,10 +72,17 @@ function generateBox(content){
 function dissapearNumbers(){
     const starGameEl = document.getElementById('gioco');
     starGameEl.classList.add('d-none');
-    while(userNumbers < NUMS){
-        let insertNumbersUser= parseInt(prompt('inserisci i numeri che ricordi'))
-        if(userNumbers == numbersArray){
-            message= 'bravo';
-            console.log(message);        
+}
+
+function appearPrompt(){
+
+    for(let i=0; i< NUMS; i++){
+        let insertNumbers= parseInt(prompt('inserisci i numeri che ricordi'));
+        userNumbers = insertNumbers;
+        console.log(userNumbers);
+        if( userNumbers === numbersArray.length){
+            message = ' hai vinto';
+            console.log(message);
+            
     }}
 }
