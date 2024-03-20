@@ -23,21 +23,28 @@ const button = document.querySelector('.btn');
 //creo l'evento base 
 button.addEventListener('click', startGame);
 
+//aggiungo il timeout
+setTimeout(dissapearNumbers, 5000);
+
 //creo la funzione principale
 function startGame(){
     const starGameEl = document.getElementById('gioco');
     starGameEl.innerHTML='';
     
     let numberList = generateRandomNumbers(NUMS);
-    
     //console.log(numberList);
 
-    let newBoxes = generateBox(numberList);
-    console.log(newBoxes);
+    for(let i= 0; i < numberList.length; i++){
+        //prendo il numero della lista
+        let number = numberList[i];
 
-    starGameEl.appendChild(newBoxes);
+        //passo il numero alla funzione che mi genera il box
+        let newBox=generateBox(number);
 
+        //append il nuovo box alla funzione
+        starGameEl.appendChild(newBox);
 
+    }
 }
 
 //funzioni
@@ -60,4 +67,9 @@ function generateBox(content){
     <span> ${content} </span>
     `;
     return newBox;
+};
+
+function dissapearNumbers(){
+    const starGameEl = document.getElementById('gioco');
+    starGameEl.classList.add('d-none');
 }
