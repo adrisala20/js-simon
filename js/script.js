@@ -10,16 +10,25 @@ Consigli del giorno:
 * Individuate gli elementi di cui avete bisogno per realizzare il programma.
 */
 
-let numbers= [];
+let numbersArray= [];
+let userNumbers = [];
+
+let sameNumbers=[];
+
+const button = document.querySelector('.btn');
 
 //creo la funzione base 
-function startGame(){
+button.addEventListener('click', function(){
 
-}
+    let boxes = document.getElementById('numeri');
+    boxes.classList.add('box');
+    boxes.innerHTML='';
+    console.log(boxes);
 
+});
 
 
 //funzioni
-function generateRandomNumbers(numbers){
-    let num = 
-}
+// function generateRandomNumbers(numbers){
+//     let num = 
+// }
