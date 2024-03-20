@@ -18,10 +18,17 @@ let sameNumbers=[];
 
 const button = document.querySelector('.btn');
 
-//creo la funzione base 
-button.addEventListener('click', function(){
+//creo l'evento base 
+button.addEventListener('click', startGame);
 
-});
+//creo la funzione principale
+function startGame(){
+    const starGameEl = document.getElementById('gioco');
+    starGameEl.innerHTML='';
+    
+    let numberList = generateRandomNumbers(NUMS);
+    console.log(numberList);
+}
 
 //funzioni
 function generateRandomNumbers(){
